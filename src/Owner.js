@@ -6,7 +6,7 @@ const Owner = (props) => {
   const { name } = props
   return (
     <div>
-      <h4> {name} </h4>
+      <h4> Copyright by: {name} </h4>
     </div>
   );
 }

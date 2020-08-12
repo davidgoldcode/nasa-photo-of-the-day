@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import App from './App'
 // import "./Image.css"; - to fill in later
 
 
