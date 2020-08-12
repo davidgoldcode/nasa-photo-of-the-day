@@ -26,25 +26,24 @@ import "./App.css";
 // should probably just do a "fetch data" function instead of img here
 function Image({url}) {
     const [img, setImg] = useState('')
-    useEffect(() => {
-      const fetchImg = (url) => {
+      const fetchImg = () => {
         fetch('https://api.nasa.gov/planetary/apod?api_key=dOlHWzaVegtmplOlZ9dQBjiZP9zOTuOuGl8j0Ryw')
-        .then(response => { 
-          response.json();
+        .then(response => response.json())
+        .then(info => {
           debugger
-        })
-        .then(img => {
+          setImg(info.url);
           console.log(img)
-          setImg(img.hdurl)
         })
-      }; fetchImg(url)
-    }, [url]) 
+      }; 
+      fetchImg(url)
+      console.log(img);
+      
 
     return (
       <div>
-        <img src={img} alt="nasa"> </img>
+        <img src={img} alt="nasa"/>
       </div>
-    )
+    );
 }
 
 
