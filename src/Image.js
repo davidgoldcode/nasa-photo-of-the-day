@@ -1,11 +1,14 @@
 import React from 'react';
-// import "./Image.css"; - to fill in later
+import styled from 'styled-components'
 
-const Image = (props) => {
-  const { imageUrl, title } = props
+const StyledImg = styled.img`
+  border-radius: 50%;
+`
+
+const Image = ({imageUrl, title}) => {
   return (
     <div>
-      <img src={imageUrl} alt={title}/>
+      <StyledImg src={imageUrl} alt={title}/>
     </div>
   );
 }

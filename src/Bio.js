@@ -1,17 +1,16 @@
 import React from 'react';
-// import "./Image.css"; - to fill in later
+import styled from 'styled-components' 
 
-const style = {
-  width: '65%',
-  margin: '0 auto',
-}
+const BioDiv = styled.div`
+  margin: ${props => props.theme.margin};
+  width: ${props => props.theme.width};
+`
 
-const Bio = (props) => {
-  const { bio } = props
+const Bio = ({ bio }) => {
   return (
-    <div>
-      <h4 style={style}> {bio} </h4>
-    </div>
+    <BioDiv>
+      <h4> {bio} </h4>
+    </BioDiv>
   );
 }
 
